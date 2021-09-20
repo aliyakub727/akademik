@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Tempat Lahir</label>
-                                        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" required=""> 
+                                        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Agama</label>
@@ -146,7 +146,7 @@
                 <!-- update -->
 
 
-                  <form id="form" action="<?= base_url(); ?>/Siswa/updatesiswa" method="post">
+                <form id="form" action="<?= base_url(); ?>/Siswa/updatesiswa" method="post">
                     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -156,7 +156,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                              
+
                                 <div class="modal-body">
                                     <input type="hidden" name="id" id="id">
 
@@ -233,7 +233,7 @@
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -258,30 +258,30 @@
                         </div>
                     </div>
                 </div>
-                  <form action="/Siswa/deletesiswa" method="post">
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            
-               <h4>Are you sure want to delete this product?</h4>
-            
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" name="id" class="siswaid">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="submit" class="btn btn-primary">Yes</button>
-            </div>
-            </div>
-        </div>
-        </div>
-    </form>
+                <form action="/Siswa/deletesiswa" method="post">
+                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Delete Siswa</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <h4>Are you sure want to delete this Data Siswa?</h4>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" class="siswaid">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -332,7 +332,7 @@
             // Call Modal Edit
             $('#editModal').modal('show');
         });
-          $('.btn-delete').on('click',function(){
+        $('.btn-delete').on('click', function() {
             // get data from button edit
             const id = $(this).data('id');
             // Set data to Form Edit
