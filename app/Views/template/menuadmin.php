@@ -34,7 +34,26 @@
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url(); ?>/siswa/">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Data Siswa</span></a>
+                <span>Data Siswa</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url(); ?>/guru/">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Guru</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url(); ?>/jurusan/">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Jurusan</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url(); ?>/masterdata/">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Master Data</span>
+            </a>
         </li>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -46,9 +65,10 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Data Ditambahkan:</h6>
-                    <a class="collapse-item" href="<?= base_url(); ?>/makanan/">Biodata Siswa</a>
-                    <a class="collapse-item" href="<?= base_url(); ?>/sayuran/">Sayuran Dll</a>
-                    <a class="collapse-item" href="<?= base_url(); ?>/minuman/">Minuman</a>
+                    <a class="collapse-item" href="<?= base_url(); ?>/siswa/">Data Siswa</a>
+                    <a class="collapse-item" href="<?= base_url(); ?>/guru/">Data Guru</a>
+                    <a class="collapse-item" href="<?= base_url(); ?>/jurusan/">Data Jurusan</a>
+                    <a class="collapse-item" href="<?= base_url(); ?>/tahun_ajaran/">Data Tahun Ajaran</a>
                 </div>
             </div>
         </li>
