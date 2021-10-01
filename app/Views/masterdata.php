@@ -180,25 +180,7 @@
                     </div>
                 </form>
 
-                <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Data Siswa</h5>
-                                <button class="close" data-dismiss="modal">
-                                    <span>&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="form" action="<?= base_url(); ?>/masterdata/update" method="post">
-                                    <input type="hidden" name="id" id="id">
-                                    <button class="btn btn-success" type="submit">Tambah</button>
-                                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Delete -->
 

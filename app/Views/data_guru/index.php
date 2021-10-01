@@ -41,19 +41,23 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
+
                                 <?php foreach ($guru as $k) : ?>
+
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['id_mapel']; ?></td>
                                         <td><?= $k['nama_guru']; ?></td>
                                         <td><?= $k['alamat']; ?></td>
                                         <td><?= $k['no_telp']; ?></td>
+
                                         <td>
                                             <a href="#" class="btn btn-info btn-sm btn-edit" data-id_guru="<?= $k['id_guru'] ?>" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_guru="<?= $k['nama_guru']; ?>"  data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>">Edit</a>
                                             <a href="#" class="btn btn-danger btn-sm btn-delete" data-id_guru="<?= $k['id_guru'] ?>">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -79,6 +83,7 @@
                                         <label>Nama Guru</label>
                                         <input type="text" class="form-control" name="nama_guru" id="nama_guru" required>
                                     </div>
+
                                     <div class="form-group">
                                         <label>Alamat</label>
                                         <textarea class="form-control" name="alamat" id="alamat" cols="30" rows="5" required=""></textarea>
@@ -99,7 +104,7 @@
                 <!-- update -->
 
 
-                  <form id="form" action="<?= base_url(); ?>/Guru/updateguru" method="post">
+                <form id="form" action="<?= base_url(); ?>/Guru/updateguru" method="post">
                     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -109,7 +114,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                              
+
                                 <div class="modal-body">
                                     <input type="hidden" name="id_guru" id="id_guru">
 
@@ -130,38 +135,41 @@
                                         <label>Nomor Telepon</label>
                                         <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only"  id="no_telp" class="form-control no_telp" required="">
                                     </div>
-
                                 </div>
                                 <div class="modal-footer">
                                     <input type="hidden" name="id_guru" class="id_guru">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
-                            
                             </div>
                         </div>
-                    </div>
                 </form>
 
-                <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Data Guru</h5>
-                                <button class="close" data-dismiss="modal">
-                                    <span>&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="form" action="<?= base_url(); ?>/Guru/updateguru" method="post">
 
-                                    <button class="btn btn-success" type="submit">Tambah</button>
-                                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </form>
+                <form action="/guru/deleteguru" method="post">
+                    <div class="modal fade muncul" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <h4>Are you sure want to delete this Data?</h4>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id_guru" class="id_guru">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
             <form action="/Guru/deleteguru" method="post">
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -186,6 +194,7 @@
         </div>
         </div>
     </form>
+
             </div>
         </div>
     </div>
@@ -208,6 +217,7 @@
             const nama_guru = $(this).data('nama_guru');
             const alamat = $(this).data('alamat');
             const no_telp = $(this).data('no_telp');
+
             // Set data to Form Edit
             $('.id_guru').val(id_guru);
              $('.id_mapel').val(id_mapel);
@@ -218,13 +228,14 @@
             // Call Modal Edit
             $('#editModal').modal('show');
         });
-          $('.btn-delete').on('click',function(){
+        $('.btn-delete').on('click', function() {
             // get data from button edit
             const id_guru = $(this).data('id_guru');
             // Set data to Form Edit
             $('.id_guru').val(id_guru);
             // Call Modal Edit
             $('#deleteModal').modal('show');
+            $('.muncul').modal('show');
         });
     });
 </script>
