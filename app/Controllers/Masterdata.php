@@ -3,20 +3,51 @@
 namespace App\Controllers;
 
 use App\Models\MasterdataModel;
+use App\Models\JurusanModel;
+use App\Models\GuruModel;
+use App\Models\SiswaModel;
+use App\Models\KelasModel;
 
 class Masterdata extends BaseController
 {
     protected $masterdata;
+    protected $gurumodel;
+    protected $jurusanmodel;
+    protected $siswamodel;
+    protected $kelasmodel;
     public function __construct()
     {
         $this->masterdata = new MasterdataModel();
+        $this->jurusanmodel = new JurusanModel();
+        $this->gurumodel = new GuruModel();
+        $this->siswamodel = new SiswaModel();
+        $this->kelasmodel = new KelasModel();
     }
 
     public function index()
     {
         $data = [
             'judul' => 'SUZURAN | Admin',
-            'masterdata' => $this->masterdata->getmasterdata()
+            'masterdata' => $this->masterdata->getmasterdata(),
+            'guru' => $this->gurumodel->getguru(),
+            'jurusan' => $this->jurusanmodel->getjurusan(),
+            'nis' => $this->siswamodel->getsiswa(),
+            'kelas' => $this->kelasmodel->getkelas()
+        ];
+        return view('masterdata', $data);
+    }
+
+    public function search()
+    {
+        $keyword = $this->request->getVar('jurusan');
+        if ($keyword) {
+            $jurusan = $this->jurusanmodel->search($keyword);
+        } else {
+            $jurusan = $this->jurusanmodel;
+        }
+        $data = [
+            'judul' => 'SUZURAN | Admin',
+
         ];
         return view('masterdata', $data);
     }

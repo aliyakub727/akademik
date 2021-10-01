@@ -1,5 +1,4 @@
 <?= $this->extend('template/templateadmin'); ?>
-
 <?= $this->section('content'); ?>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
@@ -77,7 +76,7 @@
                                 <form id="form" action="<?= base_url(); ?>/Masterdata/tambah" method="post">
                                     <div class="form-group">
                                         <label>Tahun Ajaran</label>
-                                        <select name="tahun_ajaran" id="tahun_ajaran" class="form-select form-control">
+                                        <select name="tahun_ajaran" id="tahun_ajaran" class="selectpicker form-control" data-live-search="true">
                                             <option selected>Pilih Tahun Ajaran</option>
                                             <option value="2019-2020">2019-2020</option>
                                             <option value="2020-2021">2020-2021</option>
@@ -85,30 +84,43 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nomer Induk Siswa (NIS) </label>
-                                        <input type="text" name="nis" id="nis" class="form-control" required="">
+                                        <select class="selectpicker nis form-control" data-live-search="true" name="nis" id="nis">
+                                            <option readonly selected>Pilih nis</option>
+                                            <?php foreach ($nis as $nis) : ?>
+                                                <option value="<?= $nis['nis']; ?>"><?= $nis['nis']; ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Lengkap</label>
-                                        <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required>
+                                        <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap">
                                     </div>
                                     <div class="form-group">
                                         <label>Kelas</label>
-                                        <input type="text" class="form-control" name="kelas" id="kelas" required>
+                                        <select class="selectpicker kelas form-control" data-live-search="true" name="kelas" id="kelas">
+                                            <option readonly selected>Pilih kelas</option>
+                                            <?php foreach ($kelas as $kelas) : ?>
+                                                <option value="<?= $kelas['kelas']; ?>"><?= $kelas['kelas']; ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Jurusan</label>
-                                        <select class="form-select form-control" name="jurusan" id="jurusan">
-                                            <option selected>Pilih jurusan</option>
-                                            <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan (TKJ)</option>
-                                            <option value="Akuntansi">Akuntansi (AK)</option>
-                                            <option value="Administrasi Perkantoran">Administrasi Perkantoran (AP)</option>
-                                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak (RPL)</option>
-                                            <option value="Multimedia">Multimedia (MM)</option>
+                                        <select class="selectpicker jurusan form-control" data-live-search="true" name="jurusan" id="jurusan">
+                                            <option readonly selected>Pilih jurusan</option>
+                                            <?php foreach ($jurusan as $jur) : ?>
+                                                <option value="<?= $jur['jurusan']; ?>"><?= $jur['jurusan']; ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Wali Kelas</label>
-                                        <input type="text" class="form-control" name="nama_walikelas" id="nama_walikelas">
+                                        <select class="selectpicker nama_walikelas form-control" data-live-search="true" name="nama_walikelas" id="nama_walikelas">
+                                            <option readonly selected>Pilih nama walikelas</option>
+                                            <?php foreach ($guru as $guru) : ?>
+                                                <option value="<?= $guru['nama_guru']; ?>"><?= $guru['nama_guru']; ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                     <button class="btn btn-success" type="submit">Tambah</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -218,7 +230,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
+
+<script type="text/javascript">
+    $('.nis').selectpicker('click', function() {
+        const nama = $(this).data('nama');
+        $('#nama_lengkap').val(nama);
+    });
+
+
     $(document).ready(function() {
         $('.btn-edit').on('click', function() {
 

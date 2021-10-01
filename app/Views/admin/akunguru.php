@@ -58,15 +58,17 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Data Siswa</h5>
+                                <h5 class="modal-title"><?= lang('Auth.register') ?></h5>
                                 <button class="close" data-dismiss="modal">
                                     <span>&times;</span>
                                 </button>
                             </div>
+                            <?= view('Myth\Auth\Views\_message_block') ?>
                             <div class="modal-body">
-                                <form id="form" action="<?= base_url(); ?>/Siswa/tambahsiswa" method="post">
+                                <form action="<?= route_to('register') ?>" method="post">
+                                    <?= csrf_field() ?>
                                     <div class="form-group">
-                                        <label>Nama Lengkap</label>
+                                        <label><?= lang('Auth.email') ?></label>
                                         <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required>
                                     </div>
                                     <div class="form-group">
