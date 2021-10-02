@@ -36,21 +36,7 @@ class Masterdata extends BaseController
         ];
         return view('/masterdata/masterdata', $data);
     }
-
-    public function search()
-    {
-        $keyword = $this->request->getVar('jurusan');
-        if ($keyword) {
-            $jurusan = $this->jurusanmodel->search($keyword);
-        } else {
-            $jurusan = $this->jurusanmodel;
-        }
-        $data = [
-            'judul' => 'SUZURAN | Admin',
-
-        ];
-        return view('masterdata', $data);
-    }
+    
 
     // tambah
     public function tambah()
