@@ -18,7 +18,7 @@
 
             <div class="container">
                 <!-- Content Row -->
-                <form id="form" action="<?= base_url(); ?>/Masterdata/tambah" method="post">
+                <form id="form" action="<?= base_url(); ?>/Masterdata/savedata" method="post">
                     <div class="mb-3 row">
                         <label class="col-sm-4">Tahun Ajaran</label>
                         <div class="col-sm-8">
@@ -32,18 +32,22 @@
                     <div class="mb-3 row">
                         <label class="col-sm-4">Nomer Induk Siswa (NIS) </label>
                         <div class="col-sm-8">
-                            <select class="selectpicker nis form-control" data-live-search="true" name="nis" id="nis">
+                            <select class="selectpicker nis form-control" data-live-search="true" name="nis" id="nis" onchange='changeValue(this.value)'>
                                 <option readonly selected>Pilih nis</option>
-                                <?php foreach ($nis as $nis) : ?>
-                                    <option value="<?= $nis['nis']; ?>"><?= $nis['nis']; ?></option>
-                                <?php endforeach ?>
+                                <?php 
+                                    $jsArray = "var prdName = new Array();\n";
+                                    foreach ($nis as $nis) {
+                                    echo '<option name="nis"  value="' . $nis['nis'] . '">' . $nis['nis'] . '</option>'; 
+                                    $jsArray .= "prdName['" . $nis['nis'] . "'] = {nama_lengkap:'" . addslashes($nis['nama_lengkap']) . "'};\n";
+                                    }
+                                 ?>
                             </select>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-4">Nama Lengkap</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap">
+                            <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap" >
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -92,6 +96,11 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
+    <?php echo $jsArray; ?>
+    function changeValue(nis){
+    document.getElementById('nama_lengkap').value = prdName[nis].nama_lengkap;
+};
+  
     $('.nis').selectpicker();
     $('.tahun_ajaran').selectpicker();
     $('.kelas').selectpicker();
