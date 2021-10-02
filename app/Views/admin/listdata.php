@@ -33,6 +33,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Username</th>
+                                    <th scope="col">Role</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -43,8 +44,9 @@
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['email']; ?></td>
                                         <td><?= $k['username']; ?></td>
+                                        <td><?= $k['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>/" class="btn btn-info btn-sm btn-edit">Edit</a>
+                                            <a href="<?= base_url(); ?>/userid" class="btn btn-info btn-sm btn-edit">Edit</a>
                                             <a href="<?= base_url(); ?>/" class="btn btn-danger btn-sm btn-delete">Delete</a>
                                         </td>
                                     </tr>
