@@ -34,7 +34,7 @@ class Masterdata extends BaseController
             'nis' => $this->siswamodel->getsiswa(),
             'kelas' => $this->kelasmodel->getkelas()
         ];
-        return view('masterdata', $data);
+        return view('/masterdata/masterdata', $data);
     }
 
     public function search()
@@ -54,6 +54,18 @@ class Masterdata extends BaseController
 
     // tambah
     public function tambah()
+    {
+        $data = [
+            'judul' => 'SUZURAN | Admin',
+            'masterdata' => $this->masterdata->getmasterdata(),
+            'guru' => $this->gurumodel->getguru(),
+            'jurusan' => $this->jurusanmodel->getjurusan(),
+            'nis' => $this->siswamodel->getsiswa(),
+            'kelas' => $this->kelasmodel->getkelas()
+        ];
+        return view('/masterdata/add', $data);
+    }
+    public function savedata()
     {
         $this->masterdata->save([
             'tahun_ajaran' => $this->request->getVar('tahun_ajaran'),

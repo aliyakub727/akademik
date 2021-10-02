@@ -20,7 +20,7 @@
                 <!-- Content Row -->
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-primary mb-4" id="bayar" hred data-toggle="modal" data-target="#modal">Tambah Siswa</a>
+                        <a class="btn btn-primary mb-4" href="/masterdata/tambah">Tambah Siswa</a>
                         <?php if (session()->getFlashdata('Pesan')) : ?>
                             <div class="alert alert-success" role="alert">
                                 <?= session()->getFlashdata('Pesan'); ?>
