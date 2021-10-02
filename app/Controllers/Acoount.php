@@ -18,19 +18,19 @@ class Acoount extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'SUZURAN | ACCOUNT'
+            'judul' => 'SUZURAN | ACCOUNT-GURU',
+            'users' => $this->innerjoin->getguru()
         ];
-        return view('admin', $data);
+        return view('admin/listdata', $data);
     }
-    public function guru()
+    public function createakun()
     {
 
         $data = [
-            $guru = '4',
             'judul' => 'SUZURAN | ACCOUNT-GURU',
-            'users' => $this->innerjoin->getguru($guru)
+            'users' => $this->innerjoin->getguru()
 
         ];
-        return view('admin/akunguru', $data);
+        return view('admin/createakun', $data);
     }
 }
