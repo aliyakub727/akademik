@@ -15,7 +15,7 @@ class Guru extends BaseController
     {
         $data = [
             'judul' => 'Akademik | Administrator',
-            'siswa' => $this->gurumodel->getguru()
+            'guru' => $this->gurumodel->getguru()
         ];
         return view('data_guru/index', $data);
     }
@@ -38,15 +38,15 @@ class Guru extends BaseController
       public function updateguru()
     {
         $model = new GuruModel();
-        $id = $this->request->getPost('id_guru');
+        $id_guru = $this->request->getPost('id_guru');
         $data = array(
-             'id_mapel' => $this->request->getVar('id_mapel'),
+            'id_mapel' => $this->request->getVar('id_mapel'),
             'nama_guru' => $this->request->getVar('nama_guru'),
             'alamat' => $this->request->getVar('alamat'),
             'no_telp' => $this->request->getVar('no_telp')
             
         );
-         $model->updateGuru($data, $id);
+         $model->updateGuru($data, $id_guru);
 
          session()->setFlashdata('Pesan', 'Data Berhasil Di Ubah.');
 
@@ -62,3 +62,4 @@ class Guru extends BaseController
 
     }
 }
+ 

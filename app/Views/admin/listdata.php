@@ -33,6 +33,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Username</th>
+                                    <th scope="col">Role</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -43,8 +44,9 @@
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['email']; ?></td>
                                         <td><?= $k['username']; ?></td>
+                                        <td><?= $k['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>/" class="btn btn-info btn-sm btn-edit">Edit</a>
+                                            <a href="<?= base_url(); ?>/userid" class="btn btn-info btn-sm btn-edit">Edit</a>
                                             <a href="<?= base_url(); ?>/" class="btn btn-danger btn-sm btn-delete">Delete</a>
                                         </td>
                                     </tr>
@@ -58,15 +60,17 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Data Siswa</h5>
+                                <h5 class="modal-title"><?= lang('Auth.register') ?></h5>
                                 <button class="close" data-dismiss="modal">
                                     <span>&times;</span>
                                 </button>
                             </div>
+                            <?= view('Myth\Auth\Views\_message_block') ?>
                             <div class="modal-body">
-                                <form id="form" action="<?= base_url(); ?>/Siswa/tambahsiswa" method="post">
+                                <form action="<?= route_to('register') ?>" method="post">
+                                    <?= csrf_field() ?>
                                     <div class="form-group">
-                                        <label>Nama Lengkap</label>
+                                        <label><?= lang('Auth.email') ?></label>
                                         <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required>
                                     </div>
                                     <div class="form-group">
