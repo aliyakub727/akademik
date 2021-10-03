@@ -1,5 +1,8 @@
 <?= $this->extend('template/templateadmin'); ?>
 <?= $this->section('content'); ?>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -83,8 +86,8 @@
                             </select>
                         </div>
                     </div>
-                    <button class="btn btn-success" type="submit">Tambah</button>
-                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button class="btn btn-success fa fa-check-square fa-2x" type="submit"></button>
+                    <a href="<?= base_url(); ?>/Masterdata/index"  class="btn btn-danger fa fa-window-close fa-2x"></a>
                 </form>
             </div>
         </div>
