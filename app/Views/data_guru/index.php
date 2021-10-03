@@ -1,6 +1,9 @@
 <?= $this->extend('template/templateadmin'); ?>
 
 <?= $this->section('content'); ?>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -49,8 +52,8 @@
                                         <td><?= $k['alamat']; ?></td>
                                         <td><?= $k['no_telp']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id_guru="<?= $k['id_guru'] ?>" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_guru="<?= $k['nama_guru']; ?>"  data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id_guru="<?= $k['id_guru'] ?>">Delete</a>
+                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x " data-id_guru="<?= $k['id_guru'] ?>" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_guru="<?= $k['nama_guru']; ?>"  data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>"></a>
+                                            <a href="#"  class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id_guru="<?= $k['id_guru'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
