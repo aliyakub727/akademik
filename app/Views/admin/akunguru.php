@@ -27,7 +27,11 @@
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
+<<<<<<< Updated upstream:app/Views/admin/akunguru.php
                         <table class="table table-hover" id="users-list">
+=======
+                        <table class="table table-striped" id="data-list">
+>>>>>>> Stashed changes:app/Views/admin/listdata.php
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -261,10 +265,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<<<<<<< Updated upstream:app/Views/admin/akunguru.php
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 <script>
     $('#users-list').DataTable();
+=======
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script>
+    $('#data-list').DataTable();
+>>>>>>> Stashed changes:app/Views/admin/listdata.php
     $("#tgl_lahir").datepicker({
         dateFormat: "yy-mm-dd"
     });
