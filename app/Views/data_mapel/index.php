@@ -1,6 +1,9 @@
 <?= $this->extend('template/templateadmin'); ?>
 
 <?= $this->section('content'); ?>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -46,8 +49,8 @@
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['nama_mapel']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_mapel="<?= $k['nama_mapel']; ?>">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id_mapel="<?= $k['id_mapel'] ?>">Delete</a>
+                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_mapel="<?= $k['nama_mapel']; ?>"></a>
+                                            <a href="#" class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id_mapel="<?= $k['id_mapel'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

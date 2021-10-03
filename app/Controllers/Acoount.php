@@ -17,20 +17,27 @@ class Acoount extends BaseController
 
     public function index()
     {
+
+        $db = \config\Database::connect();
+        $builder = $db->table('users');
+        $builder->select('users.id as userid, username, email, name');
+        $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+        $builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+        $query = $builder->get();
         $data = [
-            'judul' => 'SUZURAN | ACCOUNT'
+            'judul' => 'SUZURAN | ACCOUNT-GURU',
+            'users' => $query->getResultArray()
         ];
-        return view('admin', $data);
+        return view('admin/listdata', $data);
     }
-    public function guru()
+    public function createakun()
     {
 
         $data = [
-            $guru = '4',
             'judul' => 'SUZURAN | ACCOUNT-GURU',
-            'users' => $this->innerjoin->getguru($guru)
+            'users' => $this->innerjoin->getguru()
 
         ];
-        return view('admin/akunguru', $data);
+        return view('admin/createakun', $data);
     }
 }
