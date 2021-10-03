@@ -26,10 +26,181 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
+<<<<<<< Updated upstream
         <!-- Heading -->
         <div class="sidebar-heading">
             Interface
         </div>
+=======
+        <?php if (in_groups('admin')) : ?>
+            <div class="sidebar-heading">
+                Menu Operator
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/siswa/">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Data Siswa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/guru/">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Guru</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/masterdata/">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Master Data</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseone">
+                    <i class="fas fa-bars"></i>
+                    <span>Data Tambahan</span>
+                </a>
+                <div id="collapseone" class="collapse" aria-labelledby="headingone" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Data Ditambahkan:</h6>
+                        <a class="collapse-item" href="<?= base_url(); ?>/mapel/">Mata Pelajaran</a>
+                        <a class="collapse-item" href="<?= base_url(); ?>/jurusan/">Jurusan</a>
+                        <a class="collapse-item" href="<?= base_url(); ?>/tahun_ajaran/">Tahun Ajaran</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-bars"></i>
+                    <span>Laporan</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Laporan-Laporan:</h6>
+                        <a class="collapse-item" href="<?= base_url(); ?>/siswa/#">Data Siswa</a>
+                        <a class="collapse-item" href="<?= base_url(); ?>/guru/#">Data Guru</a>
+                        <a class="collapse-item" href="<?= base_url(); ?>/mapel/#">Data pelajaran</a>
+                    </div>
+                </div>
+            </li>
+            <div class="sidebar-heading">
+                Menu Guru
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Input Nilai</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Input absensi</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Review Nilai</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-bars"></i>
+                    <span>Laporan</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">laporan-laporan:</h6>
+                        <a class="collapse-item" href="<?= base_url(); ?>/#">Nilai</a>
+                        <a class="collapse-item" href="<?= base_url(); ?>/#">Absensi</a>
+                    </div>
+                </div>
+            </li>
+            <div class="sidebar-heading">
+                Kepala Sekolah
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Laporan Raport siswa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Laporan absensi siswa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Laporan Data siswa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Laporan Data guru</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Laporan Data pelajaran</span>
+                </a>
+            </li>
+        <?php endif; ?>
+        <!-- role operator -->
+        <?php if (in_groups('operator')) : ?>
+            <div class="sidebar-heading">
+                Interface
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/siswa/">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Data Siswa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/guru/">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Guru</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/masterdata/">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Master Data</span>
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <!-- role guru -->
+
+        <?php if (in_groups('guru')) : ?>
+            <div class="sidebar-heading">
+                Interface
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Input Nilai</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Input absensi</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/#">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Review Nilai</span>
+                </a>
+            </li>
+        <?php endif; ?>
+>>>>>>> Stashed changes
 
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url(); ?>/siswa/">

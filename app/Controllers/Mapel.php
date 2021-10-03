@@ -15,7 +15,7 @@ class Mapel extends BaseController
     {
         $data = [
             'judul' => 'Akademik | Administrator',
-            'mapel' => $this->mapelmodel->getmapel()
+            'mapel' => $this->mapelmodel->orderBy('nama_mapel', 'DESC')->findAll()
         ];
         return view('data_mapel/index', $data);
     }

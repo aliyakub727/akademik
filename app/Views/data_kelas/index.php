@@ -14,14 +14,14 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Jurusan</h1>
+                <h1 class="h3 mb-0 text-gray-800">Tambah Data Kelas</h1>
             </div>
 
             <div class="container">
                 <!-- Content Row -->
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-primary mb-4" id="bayar" hred data-toggle="modal" data-target="#modal">Tambah Siswa</a>
+                        <a class="btn btn-primary mb-4" id="bayar" hred data-toggle="modal" data-target="#modal">Tambah Kelas</a>
                         <?php if (session()->getFlashdata('Pesan')) : ?>
                             <div class="alert alert-success" role="alert">
                                 <?= session()->getFlashdata('Pesan'); ?>
@@ -37,13 +37,13 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                <?php foreach ($jurusan as $k) : ?>
+                                <?php foreach ($kelas as $k) : ?>
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
-                                        <td><?= $k['jurusan']; ?></td>
+                                        <td><?= $k['kelas']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id_jurusan="<?= $k['id_jurusan'] ?>" data-jurusan="<?= $k['jurusan']; ?>">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id_jurusan="<?= $k['id_jurusan'] ?>">Delete</a>
+                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id="<?= $k['id'] ?>" data-kelas="<?= $k['kelas']; ?>">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $k['id'] ?>">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -56,16 +56,16 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Data Jurusan</h5>
+                                <h5 class="modal-title">Data Kelas</h5>
                                 <button class="close" data-dismiss="modal">
                                     <span>&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form id="form" action="<?= base_url(); ?>/jurusan/tambahjurusan" method="post">
+                                <form id="form" action="<?= base_url(); ?>/Kelas/tambahkelas" method="post">
                                     <div class="form-group">
-                                        <label>Nama Jurusan</label>
-                                        <input type="text" class="form-control" name="jurusan" id="jurusan" required>
+                                        <label>Nama Kelas</label>
+                                        <input type="text" class="form-control" name="kelas" id="kelas" required>
                                     </div>
                                     <button class="btn btn-success" type="submit">Tambah</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -78,12 +78,12 @@
                 <!-- update -->
 
 
-                <form action="/jurusan/update" method="post">
+                <form action="/Kelas/updatekelas" method="post">
                     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Ubah Data Jurusan</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Ubah Data Kelas</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -91,9 +91,9 @@
                                 <div class="modal-body">
 
                                     <div class="form-group">
-                                        <label>Nama Jurusan</label>
-                                        <input type="hidden" class="id_jurusan" name="id_jurusan">
-                                        <input type="text" class="form-control jurusan" name="jurusan" id="jurusan" required>
+                                        <label>Nama Kelas</label>
+                                        <input type="hidden" class="id" name="id">
+                                        <input type="text" class="form-control kelas" name="kelas" id="kelas" required>
                                     </div>
 
                                 </div>
@@ -106,7 +106,7 @@
                     </div>
                 </form>
 
-                <form action="/jurusan/delete" method="post">
+                <form action="/Kelas/deletekelas" method="post">
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -122,7 +122,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="hidden" name="id_jurusan" class="id_jurusan">
+                                    <input type="hidden" name="id" class="id">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                                     <button type="submit" class="btn btn-primary">Yes</button>
                                 </div>
@@ -147,11 +147,11 @@
     $(document).ready(function() {
         $('.btn-edit').on('click', function() {
             // get data from button edit
-            const id_jurusan = $(this).data('id_jurusan');
-            const jurusan = $(this).data('jurusan');
+            const id = $(this).data('id');
+            const kelas = $(this).data('kelas');
             // Set data to Form Edit
-            $('.id_jurusan').val(id_jurusan);
-            $('.jurusan').val(jurusan);
+            $('.id').val(id);
+            $('.kelas').val(kelas);
 
 
 
@@ -160,9 +160,9 @@
         });
         $('.btn-delete').on('click', function() {
             // get data from button edit
-            const id_jurusan = $(this).data('id_jurusan');
+            const id = $(this).data('id');
             // Set data to Form Edit
-            $('.id_jurusan').val(id_jurusan);
+            $('.id').val(id);
             // Call Modal Edit
             $('#deleteModal').modal('show');
         });
