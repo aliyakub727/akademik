@@ -26,7 +26,6 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- role administrator -->
-
         <?php if (in_groups('admin')) : ?>
             <div class="sidebar-heading">
                 Menu Operator
@@ -169,7 +168,6 @@
                 </a>
             </li>
         <?php endif; ?>
-
         <!-- role guru -->
 
         <?php if (in_groups('guru')) : ?>

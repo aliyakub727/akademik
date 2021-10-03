@@ -1,9 +1,7 @@
 <?= $this->extend('template/templateadmin'); ?>
 
 <?= $this->section('content'); ?>
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -30,7 +28,7 @@
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="data-list">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -45,8 +43,9 @@
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['kelas']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x" data-id="<?= $k['id'] ?>" data-kelas="<?= $k['kelas']; ?>"></a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id="<?= $k['id'] ?>"></a>
+
+                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id="<?= $k['id'] ?>" data-kelas="<?= $k['kelas']; ?>">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $k['id'] ?>">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -143,7 +142,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script>
+    $('#data-list').DataTable();
+
     $(document).ready(function() {
         $('.btn-edit').on('click', function() {
             // get data from button edit
@@ -169,4 +172,5 @@
     });
 </script>
 <!-- End of Content Wrapper -->
+
 <?= $this->endsection(); ?>
