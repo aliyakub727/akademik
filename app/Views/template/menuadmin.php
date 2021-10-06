@@ -50,6 +50,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="<?= base_url(); ?>/tahunajaran/">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Tahun Ajaran</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url(); ?>/masterdata/">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Master Data</span>
