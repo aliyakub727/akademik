@@ -39,8 +39,6 @@ $routes->get('/acoount', 'admin::index', ['filter' => 'role:admin']);
 
 // routes guru
 
-
-
 //route operator
 
 //Controller siswa
