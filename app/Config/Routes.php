@@ -34,6 +34,53 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// route admin
+$routes->get('/acoount', 'admin::index', ['filter' => 'role:admin']);
+
+// routes guru
+
+
+
+//route operator
+
+//Controller siswa
+$routes->get('/siswa', 'siswa::index', ['filter' => 'role:operator']);
+$routes->get('/siswa/index', 'siswa::index', ['filter' => 'role:operator']);
+$routes->get('/siswa/deletesiswa', 'siswa::index', ['filter' => 'role:operator']);
+$routes->get('/siswa/deletesiswa/(:any)', 'siswa::index', ['filter' => 'role:operator']);
+
+//Controller jurusan
+$routes->get('/jurusan', 'jurusan::index', ['filter' => 'role:operator']);
+$routes->get('/jurusan/index', 'jurusan::index', ['filter' => 'role:operator']);
+$routes->get('/jurusan/delete', 'jurusan::index', ['filter' => 'role:operator']);
+$routes->get('/jurusan/delete/(:any)', 'jurusan::index', ['filter' => 'role:operator']);
+
+//Controller kelas
+$routes->get('/kelas', 'kelas::index', ['filter' => 'role:operator']);
+$routes->get('/kelas/index', 'kelas::index', ['filter' => 'role:operator']);
+$routes->get('/kelas/deletekelas', 'kelas::index', ['filter' => 'role:operator']);
+$routes->get('/kelas/deletekelas/(:any)', 'kelas::index', ['filter' => 'role:operator']);
+
+//Controller mapel
+$routes->get('/mapel', 'mapel::index', ['filter' => 'role:operator']);
+$routes->get('/mapel/index', 'mapel::index', ['filter' => 'role:operator']);
+$routes->get('/mapel/delete', 'mapel::index', ['filter' => 'role:operator']);
+$routes->get('/mapel/delete/(:any)', 'mapel::index', ['filter' => 'role:operator']);
+
+//Controller guru
+$routes->get('/guru', 'guru::index', ['filter' => 'role:operator']);
+$routes->get('/guru/index', 'guru::index', ['filter' => 'role:operator']);
+$routes->get('/guru/deleteguru', 'guru::index', ['filter' => 'role:operator']);
+$routes->get('/guru/deleteguru/(:any)', 'guru::index', ['filter' => 'role:operator']);
+
+//Controller masterdata
+$routes->get('/masterdata', 'masterdata::index', ['filter' => 'role:operator']);
+$routes->get('/masterdata/index', 'masterdata::index', ['filter' => 'role:operator']);
+$routes->get('/masterdata/tambah', 'masterdata::index', ['filter' => 'role:operator']);
+$routes->get('/masterdata/tambah/', 'masterdata::index', ['filter' => 'role:operator']);
+$routes->get('/masterdata/delete', 'masterdata::index', ['filter' => 'role:operator']);
+$routes->get('/masterdata/delete/(:any)', 'masterdata::index', ['filter' => 'role:operator']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
