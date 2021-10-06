@@ -148,8 +148,6 @@
 
             $('.jurusan').val(jurusan);
 
-
-
             // Call Modal Edit
             $('#editModal').modal('show');
         });
