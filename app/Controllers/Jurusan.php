@@ -19,7 +19,6 @@ class Jurusan extends BaseController
         ];
         return view('data_jurusan/index', $data);
     }
-
     // tambah
     public function tambahjurusan()
     {
