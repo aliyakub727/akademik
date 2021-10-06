@@ -16,7 +16,7 @@ class SiswaModel extends Model
         }
         return $this->where(['nis' => $nis])->first();
     }
-     public function updateSiswa($data, $id)
+    public function updateSiswa($data, $id)
     {
         $query = $this->db->table('siswa')->update($data, array('id' => $id));
         return $query;
@@ -25,8 +25,5 @@ class SiswaModel extends Model
     {
         $query = $this->db->table('siswa')->delete(array('id' => $id));
         return $query;
-    } 
-
-
-
+    }
 }

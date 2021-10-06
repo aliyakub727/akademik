@@ -43,7 +43,7 @@ class Siswa extends BaseController
 
         return redirect()->to('/siswa');
     }
-      public function updatesiswa()
+    public function updatesiswa()
     {
         $model = new SiswaModel();
         $id = $this->request->getPost('id');
@@ -61,19 +61,18 @@ class Siswa extends BaseController
             'no_telp_orangtua' => $this->request->getPost('no_telp_orangtua'),
             'jurusan' => $this->request->getPost('jurusan')
         );
-         $model->updateSiswa($data, $id);
+        $model->updateSiswa($data, $id);
 
-         session()->setFlashdata('Pesan', 'Data Berhasil Di Ubah.');
+        session()->setFlashdata('Pesan', 'Data Berhasil Di Ubah.');
 
         return redirect()->to('/siswa');
     }
-     public function deletesiswa()
+    public function deletesiswa()
     {
         $model = new SiswaModel();
         $id = $this->request->getPost('id');
         $model->deleteSiswa($id);
         session()->setFlashdata('Pesan', 'Data Berhasil Di Delete.');
         return redirect()->to('/siswa');
-
     }
 }

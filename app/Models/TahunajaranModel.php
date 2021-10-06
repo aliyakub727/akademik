@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 <?php
 
 namespace App\Models;
@@ -8,6 +11,7 @@ use CodeIgniter\Model;
 class TahunajaranModel extends Model
 {
     protected $table = "tahunajaran";
+<<<<<<< Updated upstream
     protected $primaryKey = "id_tahun";
 
     protected $useAutoIncrement = true;
@@ -28,6 +32,25 @@ class TahunajaranModel extends Model
     public function deletetahun($id_tahun)
     {
         $query = $this->db->table('tahunajaran')->delete(array('id_tahun' => $id_tahun));
+=======
+    protected $allowedFields = ['id', 'tahunajaran', 'status'];
+
+    public function gettahun($id = false)
+    {
+        if ($id == false) {
+            return $this->findAll();
+        }
+        return $this->where(['id' => $id])->first();
+    }
+    public function updateTahun($data, $id)
+    {
+        $query = $this->db->table('tahunajaran')->update($data, array('id' => $id));
+        return $query;
+    }
+    public function deleteTahun($id)
+    {
+        $query = $this->db->table('tahunajaran')->delete(array('id' => $id));
+>>>>>>> Stashed changes
         return $query;
     }
 }

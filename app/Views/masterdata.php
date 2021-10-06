@@ -189,6 +189,7 @@
                                     <span>&times;</span>
                                 </button>
                             </div>
+                            
                             <div class="modal-body">
                                 <form id="form" action="<?= base_url(); ?>/masterdata/update" method="post">
                                     <input type="hidden" name="id" id="id">
