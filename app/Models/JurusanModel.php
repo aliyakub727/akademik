@@ -17,6 +17,14 @@ class JurusanModel extends Model
         }
         return $this->where(['jurusan' => $jurusan])->first();
     }
+
+    public function search($keyword)
+    {
+        $builder = $this->table('jurusan');
+        $builder->like('jurusan', $keyword);
+        return $builder;
+    }
+
     public function updatejurusan($data, $id_jurusan)
     {
         $query = $this->db->table('jurusan')->update($data, array('id_jurusan' => $id_jurusan));

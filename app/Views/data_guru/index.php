@@ -1,6 +1,9 @@
 <?= $this->extend('template/templateadmin'); ?>
 
 <?= $this->section('content'); ?>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -8,7 +11,7 @@
     <div id="content">
         <?= $this->include('template/topbar'); ?>
 
- 
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -22,42 +25,38 @@
                 <div class="row">
                     <div class="col">
                         <a class="btn btn-primary mb-4" id="bayar" hred data-toggle="modal" data-target="#modal">Tambah Guru</a>
+        
                         <?php if (session()->getFlashdata('Pesan')) : ?>
                             <div class="alert alert-success" role="alert">
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
-<<<<<<< Updated upstream
-                        <table class="table table-hover" id="users-list">
-=======
                         <table class="table table-striped" id="data-list">
->>>>>>> Stashed changes
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">ID MAPEL</th>
                                     <th scope="col">Nama Guru</th>
                                     <th scope="col">Alamat</th>
-                                    <th scope="col">No Telepon</th>
-                                    <th scope="col">ID_mapel</th>
+                                    <th scope="col">No Telp</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               <?php $i = 1; ?>
-                                <?php foreach ($siswa as $k) : ?>
+                                <?php $i = 1; ?>
+                                <?php foreach ($guru as $k) : ?>
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
+                                        <td><?= $k['id_mapel']; ?></td>
                                         <td><?= $k['nama_guru']; ?></td>
                                         <td><?= $k['alamat']; ?></td>
                                         <td><?= $k['no_telp']; ?></td>
-                                         <td><?= $k['id_mapel']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit"data-id_guru="<?= $k['id_guru'] ?>"  data-nama_guru="<?= $k['nama_guru']; ?>" data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>" data-id_mapel="<?= $k['id_mapel'] ?>"  >Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id_guru="<?= $k['id_guru'] ?>">Delete</a>
+                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x " data-id_guru="<?= $k['id_guru'] ?>" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_guru="<?= $k['nama_guru']; ?>"  data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>"></a>
+                                            <a href="#"  class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id_guru="<?= $k['id_guru'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
-                                 
                             </tbody>
                         </table>
                     </div>
@@ -72,6 +71,7 @@
                                     <span>&times;</span>
                                 </button>
                             </div>
+
                             <div class="modal-body">
                                 <form id="form" action="<?= base_url(); ?>/Guru/tambahguru" method="post">
                                     <div class="form-group">
@@ -82,15 +82,15 @@
                                         <label>Nama Guru</label>
                                         <input type="text" class="form-control" name="nama_guru" id="nama_guru" required>
                                     </div>
-                                   
                                     <div class="form-group">
                                         <label>Alamat</label>
                                         <textarea class="form-control" name="alamat" id="alamat" cols="30" rows="5" required=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Nomor Telepon</label>
-                                        <input type="text" name="no_telp" id="no_telp" class="form-control">
+                                        <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
                                     </div>
+                                   
                                     <button class="btn btn-success" type="submit">Tambah</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </form>
@@ -116,23 +116,25 @@
                                 <div class="modal-body">
                                     <input type="hidden" name="id_guru" id="id_guru">
 
-                                    <div class="form-group">
+                                     <div class="form-group">
                                         <label>ID MAPEL</label>
-                                        <input type="text" class="form-control id_mapel" name="id_mapel" id="id_mapel" required>
+                                        <input type="text" class="form-control" name="id_mapel" id="id_mapel" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Guru</label>
                                         <input type="text" class="form-control nama_guru" name="nama_guru" id="nama_guru" required>
                                     </div>
+                                   
                                     <div class="form-group">
                                         <label>Alamat</label>
-                                        <textarea class="form-control alamat" name="alamat" id="alamat" cols="30" rows="5"></textarea>
+                                        <textarea class="form-control alamat" name="alamat" id="alamat" cols="30" rows="5" required=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Nomor Telepon</label>
-                                        <input type="text" name="no_telp" id="no_telp" class="form-control no_telp">
+                                        <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only"  id="no_telp" class="form-control no_telp" required="">
                                     </div>
-                                   
+
+                                </div>
                                 <div class="modal-footer">
                                     <input type="hidden" name="id_guru" class="id_guru">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -163,19 +165,19 @@
                         </div>
                     </div>
                 </div>
-                  <form action="<?= base_url(); ?>/Guru/deleteguru" method="post">
-            <div class="modal fade deleteModal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <form action="/Guru/deleteguru" method="post">
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
             
-               <h4>Are you sure want to delete this product?</h4>
+               <h4>Are you sure want to delete this Data?</h4>
             
             </div>
             <div class="modal-footer">
@@ -197,17 +199,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<<<<<<< Updated upstream
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
-<script>
-    $('#users-list').DataTable();
-=======
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script>
     $('#data-list').DataTable();
->>>>>>> Stashed changes
     $("#tgl_lahir").datepicker({
         dateFormat: "yy-mm-dd"
     });
@@ -219,13 +214,13 @@
             const nama_guru = $(this).data('nama_guru');
             const alamat = $(this).data('alamat');
             const no_telp = $(this).data('no_telp');
-          
             // Set data to Form Edit
             $('.id_guru').val(id_guru);
-            $('.id_mapel').val(id_mapel);
+             $('.id_mapel').val(id_mapel);
             $('.nama_guru').val(nama_guru);
             $('.alamat').val(alamat);
             $('.no_telp').val(no_telp);
+
             // Call Modal Edit
             $('#editModal').modal('show');
         });
