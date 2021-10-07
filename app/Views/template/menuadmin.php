@@ -49,6 +49,7 @@
                 </a>
             </li>
         <?php endif; ?>
+
         <!-- role guru -->
 
         <?php if (in_groups('guru')) : ?>

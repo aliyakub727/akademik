@@ -146,6 +146,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 <script>
     $('#users-list').DataTable();
+
     $(document).ready(function() {
         $('.btn-edit').on('click', function() {
             // get data from button edit
