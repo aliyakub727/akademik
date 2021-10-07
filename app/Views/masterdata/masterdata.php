@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Lengkap</label>
-                                        <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap">
+                                        <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Kelas</label>
