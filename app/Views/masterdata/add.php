@@ -50,7 +50,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-4">Nama Lengkap</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap" >
+                            <input type="text" class="form-control nama_lengkap" name="nama_lengkap" id="nama_lengkap" required="" >
                         </div>
                     </div>
                     <div class="mb-3 row">

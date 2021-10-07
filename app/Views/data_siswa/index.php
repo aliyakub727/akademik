@@ -41,7 +41,7 @@
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
                                 <?php $i = 1; ?>
                                 <?php foreach ($siswa as $k) : ?>
                                     <tr>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nomor Telepon</label>
-                                        <input type="text" name="no_telp" id="no_telp" class="form-control">
+                                         <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Lahir</label>
@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Agama</label>
-                                        <select class="form-select form-control" name="agama" id="agama">
+                                        <select class="form-select form-control" name="agama" id="agama" required="">
                                             <option selected>Pilih Agama</option>
                                             <option value="Islam">Islam</option>
                                             <option value="Hindu">Hindu</option>
@@ -125,7 +125,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>NO Telp Orangtua</label>
-                                        <input type="text" name="no_telp_orangtua" id="no_telp_orangtua" class="form-control">
+                                         <input type="tel" name="no_telp_orangtua" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp_orangtua" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Jurusan</label>
@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Jenis Kelamin</label>
-                                        <select class="form-select form-control jenis_kelamin" name="jenis_kelamin" id="jenis_kelamin">
+                                        <select class="form-select form-control jenis_kelamin" name="jenis_kelamin" id="jenis_kelamin" required="">
                                             <option selected>Pilih Jenis Kelamin</option>
                                             <option value="Laki-Laki">Laki-Laki</option>
                                             <option value="Perempuan">Perempuan</option>
@@ -177,27 +177,27 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nomer Induk Siswa (NIS) </label>
-                                        <input type="text" name="nis" id="nis" class="form-control nis">
+                                        <input type="text" name="nis" id="nis" class="form-control nis" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Alamat</label>
-                                        <textarea class="form-control alamat" name="alamat" id="alamat" cols="30" rows="5"></textarea>
+                                        <textarea class="form-control alamat" name="alamat" id="alamat" cols="30" rows="5" required=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Nomor Telepon</label>
-                                        <input type="text" name="no_telp" id="no_telp" class="form-control no_telp">
+                                         <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Lahir</label>
-                                        <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control tgl_lahir">
+                                        <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control tgl_lahir" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Tempat Lahir</label>
-                                        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control tempat_lahir">
+                                        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control tempat_lahir" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Agama</label>
-                                        <select class="form-select form-control agama" name="agama" id="agama">
+                                        <select class="form-select form-control agama" name="agama" id="agama" required="">
                                             <option selected>Pilih Agama</option>
                                             <option value="Islam">Islam</option>
                                             <option value="Hindu">Hindu</option>
@@ -208,19 +208,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Orangtua</label>
-                                        <input type="text" name="nama_orangtua" id="nama_orangtua" class="form-control nama_orangtua">
+                                        <input type="text" name="nama_orangtua" id="nama_orangtua" class="form-control nama_orangtua" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Alamat Orangtua</label>
-                                        <textarea class="form-control alamat_orangtua" name="alamat_orangtua" id="alamat_orangtua" cols="30" rows="5"></textarea>
+                                        <textarea class="form-control alamat_orangtua" name="alamat_orangtua" id="alamat_orangtua" cols="30" rows="5" required=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>NO Telp Orangtua</label>
-                                        <input type="text" name="no_telp_orangtua" id="no_telp_orangtua" class="form-control no_telp_orangtua">
+                                          <input type="tel" name="no_telp_orangtua" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp_orangtua" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Jurusan</label>
-                                        <select class="form-select form-control jurusan" name="jurusan" id="jurusan">
+                                        <select class="form-select form-control jurusan" name="jurusan" id="jurusan" required="">
                                             <option selected>Pilih jurusan</option>
                                             <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan (TKJ)</option>
                                             <option value="Akuntansi">Akuntansi (AK)</option>
