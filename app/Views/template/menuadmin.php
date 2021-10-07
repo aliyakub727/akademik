@@ -25,7 +25,6 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider">
-
         <!-- role operator -->
         <?php if (in_groups('operator')) : ?>
             <div class="sidebar-heading">
