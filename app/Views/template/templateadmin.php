@@ -19,6 +19,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
+    <!-- alert -->
+    <!-- <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css"> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
