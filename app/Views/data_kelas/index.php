@@ -1,6 +1,7 @@
 <?= $this->extend('template/templateadmin'); ?>
 
 <?= $this->section('content'); ?>
+
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -27,7 +28,7 @@
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
-                        <table class="table table-hover" id="users-list">
+                        <table class="table table-striped" id="data-list">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -42,6 +43,7 @@
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['kelas']; ?></td>
                                         <td>
+
                                             <a href="#" class="btn btn-info btn-sm btn-edit" data-id="<?= $k['id'] ?>" data-kelas="<?= $k['kelas']; ?>">Edit</a>
                                             <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $k['id'] ?>">Delete</a>
                                         </td>
@@ -140,10 +142,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script>
-    $('#users-list').DataTable();
+    $('#data-list').DataTable();
 
     $(document).ready(function() {
         $('.btn-edit').on('click', function() {
@@ -170,4 +173,5 @@
     });
 </script>
 <!-- End of Content Wrapper -->
+
 <?= $this->endsection(); ?>

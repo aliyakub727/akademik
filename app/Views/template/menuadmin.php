@@ -195,32 +195,6 @@
             </li>
         <?php endif; ?>
 
-        <!-- role guru -->
-
-        <?php if (in_groups('guru')) : ?>
-            <div class="sidebar-heading">
-                Interface
-            </div>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>/#">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Input Nilai</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>/#">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Input absensi</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>/#">
-                    <i class="fas fa-book-reader"></i>
-                    <span>Review Nilai</span>
-                </a>
-            </li>
-        <?php endif; ?>
-
         <!-- role Siswa -->
 
         <?php if (in_groups('siswa')) : ?>
