@@ -40,4 +40,11 @@ class Acoount extends BaseController
         ];
         return view('admin/createakun', $data);
     }
+
+    public function deleteakun($username)
+    {
+        $this->usermodel->delete($username);
+        session()->setFlashdata('Pesan', 'Data Berhasil Dihapus.');
+        return redirect()->to('/admin/');
+    }
 }
