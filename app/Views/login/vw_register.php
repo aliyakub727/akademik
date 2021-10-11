@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <style>
         @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
-        body{
+
+        body {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
             background: url(img/bge.jpg) no-repeat;
             background-size: cover;
         }
-        .login-box{
+
+        .login-box {
             width: 280px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             color: white;
         }
-        .login-box h1{
+
+        .login-box h1 {
             float: left;
             font-size: 40px;
             border-bottom: 6px solid #4caf50;
             margin-bottom: 50px;
             padding: 13px 0;
         }
-        .textbox{
+
+        .textbox {
             width: 100%;
             overflow: hidden;
             font-size: 20px;
@@ -36,12 +41,14 @@
             margin: 8px 0;
             border-bottom: 1px solid #4caf50;
         }
-        .textbox i{
+
+        .textbox i {
             width: 26px;
             float: left;
             text-align: center;
         }
-        .textbox input{
+
+        .textbox input {
             border: none;
             outline: none;
             background: none;
@@ -51,7 +58,8 @@
             float: left;
             margin: 0 10px;
         }
-        .btn{
+
+        .btn {
             width: 100%;
             background: none;
             border: 2px solid #4caf50;
@@ -63,48 +71,61 @@
         }
     </style>
 </head>
-<body>
-    <?php if (!empty(session()->getFlashdata('error'))) : ?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-bottom: 50px; background-color: transparent;color: white">
-        <h4>Periksa Entrian Form</h4>
-    </hr />
-    <?php echo session()->getFlashdata('error'); ?>
-    </div>
-    <?php endif; ?>
-    <div class="login-box">
-        <h1>Register</h1>
-    <form method="post" action="<?= base_url(); ?>/register/process">
-        <?= csrf_field(); ?>
-        <div class="textbox">
-            <i class="fas fa-user"></i>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-        </div>
-        <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-        </div>
-        <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" class="form-control" id="password_conf" name="password_conf" placeholder="Confirm Password">
-        </div>
-        <div class="textbox">
-            <i class="fas fa-user-circle"></i>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nama">
-        </div>
-        <div class="textbox">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Role</label>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="role">
-                <option selected>Choose...</option>
-                <option value="Admin">Admin</option>
-                <option value="Operator">Operator</option>
-                <option value="Siswa">Siswa</option>
-                <option value="Guru">Guru</option>
-                <option value="Kepala Sekolah">Kepala Sekolah</option>
-              </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
 
-    </form>
-</div>
+<body>
+    <div class="container">
+        <div class="card">
+            <?= view('Myth\Auth\Views\_message_block') ?>
+            <form action="<?= route_to('register') ?>" method="post">
+                <?= csrf_field() ?>
+                <div class="row  ml-4 mt-4">
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label for="email"><?= lang('Auth.email') ?></label>
+                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" aria-describedby="emailHelp" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
+                            <small id="emailHelp" class="form-text text-muted"><?= lang('Auth.weNeverShare') ?></small>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label for="username"><?= lang('Auth.username') ?></label>
+                            <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row  ml-4 mt-1">
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label for="password"><?= lang('Auth.password') ?></label>
+                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label for="pass_confirm"><?= lang('Auth.repeatPassword') ?></label>
+                            <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.repeatPassword') ?>" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5  ml-4 mt-1">
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class="form-select form-control" name="kesaktian" id="kesaktian">
+                            <option readonly selected>Pilih nama Role</option>
+                            <option value="admin">Administrasi</option>
+                            <option value="operator">Operator</option>
+                            <option value="guru">Guru</option>
+                            <option value="siswa">Siswa</option>
+                            <option value="kepala_sekolah">Kepala Sekolah</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-4 ml-4 mt-1 mb-5">
+                    <button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.register') ?></button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

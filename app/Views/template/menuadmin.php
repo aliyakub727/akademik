@@ -48,6 +48,12 @@
                     <span>Master Data</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/akun/">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+            </li>
         <?php endif; ?>
 
         <!-- role guru -->
@@ -72,6 +78,12 @@
                 <a class="nav-link" href="<?= base_url(); ?>/#">
                     <i class="fas fa-book-reader"></i>
                     <span>Review Nilai</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/akun/">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
                 </a>
             </li>
         <?php endif; ?>
@@ -104,6 +116,12 @@
                 <a class="nav-link" href="<?= base_url(); ?>/#">
                     <i class="fas fa-book-reader"></i>
                     <span>Laporan raport </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/akun/">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
                 </a>
             </li>
         <?php endif; ?>
@@ -142,6 +160,12 @@
                 <a class="nav-link" href="<?= base_url(); ?>/#">
                     <i class="fas fa-book-reader"></i>
                     <span>Laporan Data pelajaran</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>/akun/">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
                 </a>
             </li>
         <?php endif; ?>
