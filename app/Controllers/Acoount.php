@@ -33,7 +33,7 @@ class Acoount extends BaseController
 
     public function detail($id)
     {
-        $this->builder->select('users.id as userid, username, email, fullname, user_image, name');
+        $this->builder->select('users.id as userid, username, email, fullname, user_image, name, description, password_hash');
         $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
         $this->builder->where('users.id', $id);

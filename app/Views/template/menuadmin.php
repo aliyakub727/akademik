@@ -181,11 +181,11 @@
         <!-- role operator -->
         <?php if (in_groups('operator')) : ?>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseone">
                     <i class="fas fa-bars"></i>
                     <span>Data Tambahan</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseone" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Ditambahkan:</h6>
                         <a class="collapse-item" href="<?= base_url(); ?>/mapel/">Mata Pelajaran</a>
