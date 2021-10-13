@@ -22,7 +22,7 @@
 				<?php if (logged_in()) : ?>
 					<a href="<?= base_url(); ?>/dashboard" class="tombol">Get Started</a>
 				<?php else : ?>
-					<a href="<?= base_url(); ?>/login" class="tombol">Get Started</a>
+					<a href="<?= base_url(); ?>/dashboard" class="tombol">Get Started</a>
 				<?php endif; ?>
 			</div>
 		</div>

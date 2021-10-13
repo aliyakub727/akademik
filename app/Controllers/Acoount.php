@@ -4,18 +4,21 @@ namespace App\Controllers;
 
 use App\Models\InnerJoinModel;
 use Myth\Auth\Models\UserModel;
+use App\Models\GuruModel;
 
 class Acoount extends BaseController
 {
     protected $usermodel;
     protected $innerjoin;
     protected $db, $builder;
+    protected $gurumodel;
     public function __construct()
     {
         $this->usermodel = new UserModel();
         $this->innerjoin = new InnerJoinModel();
         $this->db = \config\Database::connect();
         $this->builder = $this->db->table('users');
+        $this->gurumodel = new GuruModel();
     }
 
     public function index()
@@ -49,7 +52,8 @@ class Acoount extends BaseController
 
         $data = [
             'judul' => 'SUZURAN | ACCOUNT-GURU',
-            'users' => $this->innerjoin->getguru()
+            'users' => $this->innerjoin->getguru(),
+            'guru' => $this->gurumodel->getguru()
 
         ];
         return view('admin/createakun', $data);
