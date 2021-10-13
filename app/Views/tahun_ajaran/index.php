@@ -1,9 +1,6 @@
 <?= $this->extend('template/templateadmin'); ?>
 
 <?= $this->section('content'); ?>
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -17,7 +14,7 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Jurusan</h1>
+                <h1 class="h3 mb-0 text-gray-800">Tambah Data Tahun Ajaran</h1>
             </div>
 
             <div class="container">
@@ -30,23 +27,27 @@
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
-                        <table class="table table-striped" id="data-list">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Jurusan</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col">ID TAHUN AJARAN</th>
+                                    <th scope="col">TAHUN AJARAN</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
-                                <?php foreach ($jurusan as $k) : ?>
+                                <?php foreach ($tahunajaran as $k) : ?>
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
-                                        <td><?= $k['jurusan']; ?></td>
+                                        <td><?= $k['id_tahun']; ?></td>
+                                        <td><?= $k['tahunajaran']; ?></td>
+                                        <td><?= $k['status']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x" data-id_jurusan="<?= $k['id_jurusan'] ?>" data-jurusan="<?= $k['jurusan']; ?>"></a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id_jurusan="<?= $k['id_jurusan'] ?>"></a>
+                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id_tahun="<?= $k['id_tahun'] ?>" data-tahunajaran="<?= $k['tahunajaran']; ?> " data-status=" <?= $k['status']; ?>">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id_tahun="<?= $k['id_tahun'] ?>">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -59,16 +60,24 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Data Jurusan</h5>
+                                <h5 class="modal-title">Data Tahun ajaran</h5>
                                 <button class="close" data-dismiss="modal">
                                     <span>&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form id="form" action="<?= base_url(); ?>/jurusan/tambahjurusan" method="post">
+                                <form id="form" action="<?= base_url(); ?>/tahunajaran/tambahtahun" method="post">
                                     <div class="form-group">
-                                        <label>Nama Jurusan</label>
-                                        <input type="text" class="form-control" name="jurusan" id="jurusan" required>
+                                        <label>ID Tahun Ajaran</label>
+                                        <input type="text" class="form-control" name="id_tahun" id="id_tahun" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tahun Ajaran</label>
+                                        <input type="text" class="form-control" name="tahunajaran" id="tahunajaran" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <input type="text" class="form-control" name="status" id="status" required>
                                     </div>
                                     <button class="btn btn-success" type="submit">Tambah</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -81,7 +90,7 @@
                 <!-- update -->
 
 
-                <form action="/jurusan/update" method="post">
+                <form action="/tahunajaran/update" method="post">
                     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -94,9 +103,19 @@
                                 <div class="modal-body">
 
                                     <div class="form-group">
-                                        <label>Nama Jurusan</label>
-                                        <input type="hidden" class="id_jurusan" name="id_jurusan">
-                                        <input type="text" class="form-control jurusan" name="jurusan" id="jurusan" required>
+                                        <label>ID tahun ajaran</label>
+
+                                        <input type="text" class="form-control id_tahun" name="id_tahun" id="id_tahun" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tahun ajaran</label>
+
+                                        <input type="text" class="form-control tahunajaran" name="tahunajaran" id="tahunajaran" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+
+                                        <input type="text" class="form-control status" name="status" id="status" required>
                                     </div>
 
                                 </div>
@@ -109,7 +128,7 @@
                     </div>
                 </form>
 
-                <form action="/jurusan/delete" method="post">
+                <form action="/tahunajaran/delete" method="post">
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -125,7 +144,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="hidden" name="id_jurusan" class="id_jurusan">
+                                    <input type="hidden" name="id_tahun" class="id_tahun">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                                     <button type="submit" class="btn btn-primary">Yes</button>
                                 </div>
@@ -143,18 +162,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script>
-    $('#data-list').DataTable();
     $(document).ready(function() {
         $('.btn-edit').on('click', function() {
             // get data from button edit
-            const id_jurusan = $(this).data('id_jurusan');
-            const jurusan = $(this).data('jurusan');
+            const id_tahun = $(this).data('id_tahun');
+            const tahunajaran = $(this).data('tahunajaran');
+            const status = $(this).data('status');
+
+
             // Set data to Form Edit
-            $('.id_jurusan').val(id_jurusan);
-            $('.jurusan').val(jurusan);
+            $('.id_tahun').val(id_tahun);
+            $('.tahunajaran').val(tahunajaran);
+            $('.status').val(status);
 
 
 
@@ -163,9 +183,9 @@
         });
         $('.btn-delete').on('click', function() {
             // get data from button edit
-            const id_jurusan = $(this).data('id_jurusan');
+            const id_tahun = $(this).data('id_tahun');
             // Set data to Form Edit
-            $('.id_jurusan').val(id_jurusan);
+            $('.id_tahun').val(id_tahun);
             // Call Modal Edit
             $('#deleteModal').modal('show');
         });

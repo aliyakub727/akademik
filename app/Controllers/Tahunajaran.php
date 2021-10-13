@@ -17,7 +17,7 @@ class Tahunajaran extends BaseController
             'judul' => 'Akademik | Administrator',
             'tahunajaran' => $this->tahunmodel->gettahun()
         ];
-        return view('data_tahunajaran/index', $data);
+        return view('tahun_ajaran/index', $data);
     }
 
     // tambah
