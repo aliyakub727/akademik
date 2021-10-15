@@ -37,7 +37,7 @@ $routes->get('/', 'Home::index');
 // route admin
 $routes->get('/acoount', 'acoount::index', ['filter' => 'role:admin']);
 $routes->get('/acoount/index', 'acoount::index', ['filter' => 'role:admin']);
-$routes->get('/acoount/createakun', 'Acoount::index', ['filter' => 'role:admin']);
+//$routes->get('/acoount/createakun', 'Acoount::index', ['filter' => 'role:admin']);
 
 // routes guru
 

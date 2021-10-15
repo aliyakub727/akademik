@@ -9,7 +9,7 @@
         @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 
         body {
-            background-image: url(/img/bge.jpg);
+            background-image: url(/img/EPG.jpg);
             background-position: top;
             background-repeat: no-repeat;
             background-size: 100vmax;
@@ -84,7 +84,7 @@
                     <?php if ($config->validFields === ['email']) : ?>
                         <div class="textbox">
                             <i class="fas fa-user"></i>
-                            <input type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>">
+                            <input type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>"  autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= session('errors.login') ?>
                             </div>

@@ -1,5 +1,8 @@
 <?= $this->extend('template/templateadmin'); ?>
 <?= $this->section('content'); ?>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
@@ -9,11 +12,13 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+            <div class="card"> 
 
             <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4"  style="margin-left: 20px;margin-top: 20px">
                 <h1 class="h3 mb-0 text-gray-800">Data Siswa</h1>
             </div>
+            <hr>
 
             <div class="container">
                 <!-- Content Row -->
@@ -25,6 +30,7 @@
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
+                         <div style="padding-right: 20px;padding-left: 20px;padding-bottom: 50px">
                         <table class="table table-hover" id="users-list">
                             <thead>
                                 <tr>
@@ -50,15 +56,17 @@
                                         <td><?= $k['jurusan']; ?></td>
                                         <td><?= $k['nama_walikelas']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id="<?= $k['id']; ?>" data-tahun_ajaran="<?= $k['tahun_ajaran']; ?>" data-nis="<?= $k['nis']; ?>" data-nama_lengkap="<?= $k['nama_lengkap']; ?>" data-kelas="<?= $k['kelas']; ?>" data-jurusan="<?= $k['jurusan']; ?>" data-nama_walikelas="<?= $k['nama_walikelas']; ?>">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $k['id'] ?>">Delete</a>
+                                            <a href="#" style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit "  data-id="<?= $k['id']; ?>" data-tahun_ajaran="<?= $k['tahun_ajaran']; ?>" data-nis="<?= $k['nis']; ?>" data-nama_lengkap="<?= $k['nama_lengkap']; ?>" data-kelas="<?= $k['kelas']; ?>" data-jurusan="<?= $k['jurusan']; ?>" data-nama_walikelas="<?= $k['nama_walikelas']; ?>"></a>
+                                            <a href="#" style="color:#ffffff;padding-top:6px;size: 2px" class="btn btn-danger btn-delete fa fa-trash "data-id="<?= $k['id'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
+                    </div>
                 </div>
+            </div>
 
                 <!-- tambah -->
                 <div class=" modal fade" id="modal">

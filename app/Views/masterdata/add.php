@@ -13,12 +13,13 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+        <div class="card"> 
 
             <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
                 <h1 class="h3 mb-0 text-gray-800">Master Data</h1>
             </div>
-
+            <hr>
             <div class="container">
                 <!-- Content Row -->
                 <form id="form" action="<?= base_url(); ?>/Masterdata/savedata" method="post">
@@ -91,6 +92,9 @@
                 </form>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 </div>
 </div>
