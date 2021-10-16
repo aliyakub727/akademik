@@ -36,7 +36,7 @@ class Masterdata extends BaseController
         ];
         return view('/masterdata/masterdata', $data);
     }
-    
+
 
     // tambah
     public function tambah()
@@ -67,6 +67,18 @@ class Masterdata extends BaseController
         return redirect()->to('/masterdata');
     }
 
+    public function edit($id)
+    {
+        $data = [
+            'judul' => 'SUZURAN | Admin',
+            'masterdata' => $this->masterdata->getmasterdata($id),
+            'guru' => $this->gurumodel->getguru(),
+            'jurusan' => $this->jurusanmodel->getjurusan(),
+            'nis' => $this->siswamodel->getsiswa(),
+            'kelas' => $this->kelasmodel->getkelas()
+        ];
+        return view('/masterdata/update', $data);
+    }
     //update
     public function update()
     {

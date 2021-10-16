@@ -12,7 +12,7 @@
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Siswa</h1>
+                <h1 class="h3 mb-0 text-gray-800">Masterdata Pelajaran</h1>
             </div>
 
             <div class="container">
@@ -50,7 +50,7 @@
                                         <td><?= $k['jurusan']; ?></td>
                                         <td><?= $k['nama_walikelas']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit" data-id="<?= $k['id']; ?>" data-tahun_ajaran="<?= $k['tahun_ajaran']; ?>" data-nis="<?= $k['nis']; ?>" data-nama_lengkap="<?= $k['nama_lengkap']; ?>" data-kelas="<?= $k['kelas']; ?>" data-jurusan="<?= $k['jurusan']; ?>" data-nama_walikelas="<?= $k['nama_walikelas']; ?>">Edit</a>
+                                            <a href="<?= base_url(); ?>/masterdata/edit/<?= $k['id']; ?>" class="btn btn-info btn-sm btn-edit">Edit</a>
                                             <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $k['id'] ?>">Delete</a>
                                         </td>
                                     </tr>

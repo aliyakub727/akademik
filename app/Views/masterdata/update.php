@@ -22,7 +22,8 @@
 
             <div class="container">
                 <!-- Content Row -->
-                <form id="form" action="<?= base_url(); ?>/Masterdata/savedata" method="post">
+                <form id="form" action="<?= base_url(); ?>/Masterdata/update" method="post">
+                    <input type="hidden" name="id" id="id">
                     <div class="mb-3 row">
                         <label class="col-sm-4">Tahun Ajaran</label>
                         <div class="col-sm-8">
