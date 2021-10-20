@@ -47,33 +47,33 @@ $routes->get('/acoount/index', 'acoount::index', ['filter' => 'role:admin']);
 //Controller siswa
 $routes->get('/siswa', 'Siswa::index', ['filter' => 'role:operator']);
 $routes->get('/siswa/index', 'Siswa::index', ['filter' => 'role:operator']);
-$routes->get('/siswa/deletesiswa/(:any)', 'Siswa::index', ['filter' => 'role:operator']);
+// $routes->get('/siswa/deletesiswa/(:any)', 'Siswa::index', ['filter' => 'role:operator']);
 
 //Controller jurusan
 $routes->get('/jurusan', 'Jurusan::index', ['filter' => 'role:operator']);
 $routes->get('/jurusan/index', 'Jurusan::index', ['filter' => 'role:operator']);
-$routes->get('/jurusan/delete/(:any)', 'Jurusan::index', ['filter' => 'role:operator']);
+// $routes->get('/jurusan/delete/(:any)', 'Jurusan::index', ['filter' => 'role:operator']);
 
 //Controller kelas
 $routes->get('/kelas', 'Kelas::index', ['filter' => 'role:operator']);
 $routes->get('/kelas/index', 'Kelas::index', ['filter' => 'role:operator']);
 
-$routes->get('/kelas/deletekelas/(:any)', 'Kelas::index', ['filter' => 'role:operator']);
+// $routes->get('/kelas/deletekelas/(:any)', 'Kelas::index', ['filter' => 'role:operator']);
 
 //Controller mapel
 $routes->get('/mapel', 'Mapel::index', ['filter' => 'role:operator']);
 $routes->get('/mapel/index', 'Mapel::index', ['filter' => 'role:operator']);
-$routes->get('/mapel/delete/(:any)', 'Mapel::index', ['filter' => 'role:operator']);
+// $routes->get('/mapel/delete/(:any)', 'Mapel::index', ['filter' => 'role:operator']);
 
 //Controller guru
 $routes->get('/guru', 'Guru::index', ['filter' => 'role:operator']);
 $routes->get('/guru/index', 'Guru::index', ['filter' => 'role:operator']);
-$routes->get('/guru/deleteguru/(:any)', 'Guru::index', ['filter' => 'role:operator']);
+// $routes->get('/guru/deleteguru/(:any)', 'Guru::index', ['filter' => 'role:operator']);
 
 //Controller masterdata
 $routes->get('/masterdata', 'Masterdata::index', ['filter' => 'role:operator']);
 $routes->get('/masterdata/index', 'Masterdata::index', ['filter' => 'role:operator']);
-$routes->get('/masterdata/delete/(:any)', 'Masterdata::index', ['filter' => 'role:operator']);
+// $routes->get('/masterdata/delete/(:any)', 'Masterdata::index', ['filter' => 'role:operator']);
 
 /*
  * --------------------------------------------------------------------

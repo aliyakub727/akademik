@@ -98,9 +98,8 @@ class Masterdata extends BaseController
         return redirect()->to('/masterdata');
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $id = $this->request->getPost('id');
         $this->masterdata->delete_data($id);
         session()->setFlashdata('Pesan', 'Data Berhasil Di Delete.');
         return redirect()->to('/masterdata');

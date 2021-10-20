@@ -46,8 +46,8 @@
                                         <td><?= $k['username']; ?></td>
                                         <td><?= $k['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>/userid" class="btn btn-info btn-sm btn-edit">Edit</a>
-                                            <a href="<?= base_url(); ?>/acoount/deteleakun/<?= $k['username']; ?>" class="btn btn-danger btn-sm btn-delete">Delete</a>
+                                            <a href="<?= base_url(); ?>/acoount/editakun/<?= $k['userid']; ?>" class="btn btn-info btn-sm btn-edit">Edit</a>
+                                            <a href="<?= base_url(); ?>/acoount/deleteakun/<?= $k['userid']; ?>" class="btn btn-danger btn-sm btn-delete">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
