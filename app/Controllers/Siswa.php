@@ -43,6 +43,56 @@ class Siswa extends BaseController
 
         return redirect()->to('/siswa');
     }
+
+    public function formtambah() 
+    {
+        $data = [
+            'judul' => 'dafit kontol',
+            'validation' => \config\services::validation()
+        ];
+        return view('data_siswa/add', $data);
+    }
+     public function tambah1()
+    {
+        if (!$this->validate([
+            'inama_lengkap'=>[
+                'rules' => 'required|is_unique[nama_lengkap]',
+                'errors' => [
+                    'required' => 'Nama Harus Diisi',
+                    'is_unique' => 'Nama Anda Sudah Terdaftar'
+                ]
+            ],
+              'ijenis_kelamin'=>[
+                'rules' => 'required|is_unique[jenis_kelamin]',
+                'errors' => [
+                    'required' => 'Harus Pilih salah 1',
+                    'is_unique' => ' '
+                ]
+            ],
+              
+
+        ])){
+            return redirect()->to('/siswa/tambahsiswa')->withInput();
+            }
+            $this->SiswaModel->save([
+            $data = [
+             'judul' => 'SUZURAN | Admin',
+            'nama_lengkap' => $this->siswamodel->getsiswa('nama_lengkap'),
+            'jenis_kelamin' => $this->siswamodel->getsiswa('jenis_kelamin'),
+            'nis' => $this->siswamodel->getsiswa('nis'),
+            'alamat' => $this->siswamodel->getsiswa('alamat'),
+            'no_telp' => $this->siswamodel->getsiswa('no_telp'),
+            'tgl_lahir' => $this->siswamodel->getsiswa('tgl_lahir'),
+            'tempat_lahir' => $this->siswamodel->getsiswa('tempat_lahir'),
+            'agama' => $this->siswamodel->getsiswa('agama'),
+            'nama_orangtua' => $this->siswamodel->getsiswa('nama_orangtua'),
+            'alamat_orangtua' => $this->siswamodel->getsiswa('alamat_orangtua'),
+            'no_telp_orangtua' => $this->siswamodel->getsiswa('no_telp_orangtua'),
+            'jurusan' => $this->siswamodel->getsiswa('jurusan')
+            ]
+        ]);
+        return view('/data_siswa/add', $data);
+    }
       public function updatesiswa()
     {
         $model = new SiswaModel();

@@ -14,22 +14,28 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+            <div class="card" >
+                 <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Data Siswa</h1>
+                <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Holtwood One SC', serif; ">Data Siswa</h1>
             </div>
+        </div>
+        <hr>
 
             <div class="container">
                 <!-- Content Row -->
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-primary mb-4" id="bayar" hred data-toggle="modal" data-target="#modal">Tambah Siswa</a>
+                       <a class="btn btn-primary mb-4" href="/siswa/formtambah">Tambah Siswa</a>
                         <?php if (session()->getFlashdata('Pesan')) : ?>
                             <div class="alert alert-success" role="alert">
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
+                         <div style="padding-right: 20px;padding-left: 20px;padding-bottom: 50px">
                         <table class="table table-striped" id="data-list">
                             <thead>
                                 <tr>
@@ -51,13 +57,14 @@
                                         <td><?= $k['jenis_kelamin']; ?></td>
                                         <td><?= $k['jurusan']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-primary btn-sm btn-edit fa fa-edit fa-2x " data-id="<?= $k['id'] ?>" data-nama_lengkap="<?= $k['nama_lengkap']; ?>" data-jenis_kelamin="<?= $k['jenis_kelamin']; ?>" data-nis="<?= $k['nis']; ?>" data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>" data-tgl_lahir="<?= $k['tgl_lahir']; ?>" data-tempat_lahir="<?= $k['tempat_lahir']; ?>" data-agama="<?= $k['agama']; ?>" data-nama_orangtua="<?= $k['nama_orangtua']; ?>" data-alamat_orangtua="<?= $k['alamat_orangtua']; ?>" data-no_telp_orangtua="<?= $k['no_telp_orangtua']; ?>" data-jurusan="<?= $k['jurusan']; ?>"></a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id="<?= $k['id'] ?>"></a>
+                                              <a href="#" style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit "  data-id="<?= $k['id'] ?>" data-nama_lengkap="<?= $k['nama_lengkap']; ?>" data-jenis_kelamin="<?= $k['jenis_kelamin']; ?>" data-nis="<?= $k['nis']; ?>" data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>" data-tgl_lahir="<?= $k['tgl_lahir']; ?>" data-tempat_lahir="<?= $k['tempat_lahir']; ?>" data-agama="<?= $k['agama']; ?>" data-nama_orangtua="<?= $k['nama_orangtua']; ?>" data-alamat_orangtua="<?= $k['alamat_orangtua']; ?>" data-no_telp_orangtua="<?= $k['no_telp_orangtua']; ?>" data-jurusan="<?= $k['jurusan']; ?>" ></a>
+                                            <a href="#" style="color:#ffffff;padding-top:6px;size: 2px" class="btn btn-danger btn-delete fa fa-trash " data-id="<?= $k['id'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>
+                    </div>
                     </div>
                 </div>
                 <!-- tambah -->

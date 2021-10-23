@@ -6,13 +6,12 @@
     <div id="content">
         <?= $this->include('template/topbar'); ?>
 
-
-        <!-- Begin Page Content -->
+         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+            <div class="card">
             <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Masterdata Pelajaran</h1>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
+                <h1 class="h3 mb-0 text-gray-800" >Masterdata Pelajaran</h1>
             </div>
 
             <div class="container">
@@ -50,13 +49,14 @@
                                         <td><?= $k['jurusan']; ?></td>
                                         <td><?= $k['nama_walikelas']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>/masterdata/edit/<?= $k['id']; ?>" class="btn btn-info btn-sm btn-edit">Edit</a>
-                                            <a href="<?= base_url(); ?>/masterdata/delete/<?= $k['id']; ?>" class="btn btn-danger btn-sm btn-delete">Delete</a>
+                                            <a href="<?= base_url(); ?>/masterdata/edit/<?= $k['id']; ?>" style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit "></a>
+                                            <a href="<?= base_url(); ?>/masterdata/delete/<?= $k['id']; ?>" class="btn btn-danger btn-delete fa fa-trash"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>
+                    </div>
                     </div>
                 </div>
 
