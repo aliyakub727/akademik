@@ -2,6 +2,7 @@
 
 <?= $this->section('content'); ?>
 <!-- Content Wrapper -->
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -24,7 +25,7 @@
                 <!-- Content Row -->
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-primary mb-4" id="bayar" hred data-toggle="modal" data-target="#modal">Tambah Siswa</a>
+                        <a class="btn btn-primary mb-4" href="<?= base_url(); ?>/siswa/create">Tambah Siswa</a>
                         <?php if (session()->getFlashdata('Pesan')) : ?>
                             <div class="alert alert-success" role="alert">
                                 <?= session()->getFlashdata('Pesan'); ?>
@@ -41,7 +42,7 @@
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody> 
+                            <tbody>
                                 <?php $i = 1; ?>
                                 <?php foreach ($siswa as $k) : ?>
                                     <tr>
@@ -94,7 +95,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nomor Telepon</label>
-                                         <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
+                                        <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Lahir</label>
@@ -125,7 +126,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>NO Telp Orangtua</label>
-                                         <input type="tel" name="no_telp_orangtua" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp_orangtua" class="form-control" required="">
+                                        <input type="tel" name="no_telp_orangtua" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp_orangtua" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Jurusan</label>
@@ -185,7 +186,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nomor Telepon</label>
-                                         <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
+                                        <input type="tel" name="no_telp" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Lahir</label>
@@ -216,7 +217,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>NO Telp Orangtua</label>
-                                          <input type="tel" name="no_telp_orangtua" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp_orangtua" class="form-control" required="">
+                                        <input type="tel" name="no_telp_orangtua" pattern="^\d{12}$" title="12 numeric characters only" id="no_telp_orangtua" class="form-control" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Jurusan</label>
@@ -347,11 +348,11 @@
             $('#deleteModal').modal('show');
         });
 
-     
+
     });
-        $(document).ready( function () {
-            $('#data-siswa').DataTable();
-        } );
+    $(document).ready(function() {
+        $('#data-siswa').DataTable();
+    });
 </script>
 <!-- End of Content Wrapper -->
 <?= $this->endsection(); ?>
