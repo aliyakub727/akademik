@@ -15,7 +15,7 @@ class Siswa extends BaseController
     {
         $data = [
             'judul' => 'Akademik | Administrator',
-            'siswa' => $this->siswamodel->getsiswa()
+            'siswa' => $this->siswamodel->getsiswa(),
         ];
         return view('data_siswa/index', $data);
     }
@@ -27,22 +27,25 @@ class Siswa extends BaseController
             'judul' => 'Form Tambah Data Makanan Favorit',
             'validation' => \Config\Services::validation()
         ];
-        return view('data_siswa/add', $data);
+        return view('data_siswa/create', $data);
     }
 
     // tambah
     public function tambahsiswa()
     {
         if (!$this->validate([
-            'inama_lengkap' => [
+            'nama_lengkap' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Nama minuman Harus diisi.',
+                    'required' => 'Nama Harus diisi.',
                     'is_unique' => 'Nama minuman Sudah terdaftar.'
                 ]
-            ],
-
+            ]
         ])) {
+
+            // $validation = \Config\Services::validation();
+            // dd($validation);
+            // return redirect()->to('/Siswa/create')->withInput()->with('validation', $validation);
             return redirect()->to('/siswa/create')->withInput();
         }
         $this->siswamodel->save([

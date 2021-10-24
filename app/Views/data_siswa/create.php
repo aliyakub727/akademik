@@ -19,14 +19,13 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Master Pelajaran</h1>
             </div>
-
             <div class="container">
                 <form id="form" action="<?= base_url(); ?>/Siswa/tambahsiswa" method="post">
                     <div class="form-group">
                         <label>Nama Lengkap</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('inamalengkap')) ? 'is-invalid' : ''; ?>" name="nama_lengkap" id="nama_lengkap">
+                        <input autofocus type="text" class="form-control <?= ($validation->hasError('nama_lengkap')) ? 'is-invalid' : ''; ?>" name="nama_lengkap" id="nama_lengkap">
                         <div class="invalid-feedback">
-                            <?= $validation->getError('inamalengkap'); ?>
+                            <?= $validation->getError('nama_lengkap'); ?>
                         </div>
                     </div>
                     <div class="form-group">
