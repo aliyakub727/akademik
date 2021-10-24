@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style type="text/css">
+    h1{
+        font-family: 'Holtwood One SC', serif; 
+    }
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -18,6 +22,11 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- alert -->
     <!-- <script src="sweetalert2.min.js"></script>
@@ -78,6 +87,8 @@
     <script src="<?= base_url(); ?>/js/demo/chart-area-demo.js"></script>
     <script src="<?= base_url(); ?>/js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    
 </body>
 
 </html>
+<script>

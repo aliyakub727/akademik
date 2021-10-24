@@ -14,11 +14,13 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+         <div class="card">
             <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
                 <h1 class="h3 mb-0 text-gray-800">Data Guru</h1>
             </div>
+            <hr>
+
 
             <div class="container">
                 <!-- Content Row -->
@@ -31,6 +33,7 @@
                                 <?= session()->getFlashdata('Pesan'); ?>
                             </div>
                         <?php endif; ?>
+                         <div style="padding-right: 20px;padding-left: 20px;padding-bottom: 50px">
                         <table class="table table-striped" id="data-list">
                             <thead>
                                 <tr>
@@ -52,8 +55,8 @@
                                         <td><?= $k['alamat']; ?></td>
                                         <td><?= $k['no_telp']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x " data-id_guru="<?= $k['id_guru'] ?>" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_guru="<?= $k['nama_guru']; ?>"  data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>"></a>
-                                            <a href="#"  class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id_guru="<?= $k['id_guru'] ?>"></a>
+                                            <a href="#"style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit " data-id_guru="<?= $k['id_guru'] ?>" data-id_mapel="<?= $k['id_mapel'] ?>" data-nama_guru="<?= $k['nama_guru']; ?>"  data-alamat="<?= $k['alamat']; ?>" data-no_telp="<?= $k['no_telp']; ?>"></a>
+                                            <a href="#"  style="color:#ffffff;padding-top:6px;size: 2px" class="btn btn-danger btn-delete fa fa-trash "data-id_guru="<?= $k['id_guru'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -61,6 +64,8 @@
                         </table>
                     </div>
                 </div>
+            </div>
+            </div>
                 <!-- tambah -->
                 <div class=" modal fade" id="modal">
                     <div class="modal-dialog">

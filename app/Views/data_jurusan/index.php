@@ -45,8 +45,8 @@
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $k['jurusan']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm btn-edit fa fa-edit fa-2x" data-id_jurusan="<?= $k['id_jurusan'] ?>" data-jurusan="<?= $k['jurusan']; ?>"></a>
-                                            <a href="#" class="btn btn-danger btn-sm btn-delete fa fa-trash fa-2x" data-id_jurusan="<?= $k['id_jurusan'] ?>"></a>
+                                            <a href="#" style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit " data-id_jurusan="<?= $k['id_jurusan'] ?>" data-jurusan="<?= $k['jurusan']; ?>"></a>
+                                            <a href="#" style="color:#ffffff;padding-top:6px;size: 2px" class="btn btn-danger btn-delete fa fa-trash " data-id_jurusan="<?= $k['id_jurusan'] ?>"></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

@@ -14,11 +14,15 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+            <div class="card">
+                 <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Master Pelajaran</h1>
+                <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Holtwood One SC', serif; ">Master Pelajaran</h1>
             </div>
+        </div>
+        <hr>
 
             <div class="container">
                 <!-- Content Row -->
@@ -93,6 +97,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
