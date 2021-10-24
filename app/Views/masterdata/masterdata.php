@@ -6,57 +6,57 @@
     <div id="content">
         <?= $this->include('template/topbar'); ?>
 
-         <!-- Begin Page Content -->
+        <!-- Begin Page Content -->
         <div class="container-fluid">
             <div class="card">
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
-                <h1 class="h3 mb-0 text-gray-800" >Masterdata Pelajaran</h1>
-            </div>
-
-            <div class="container">
-                <!-- Content Row -->
-                <div class="row">
-                    <div class="col">
-                        <a class="btn btn-primary mb-4" href="/masterdata/tambah">Tambah Siswa</a>
-                        <?php if (session()->getFlashdata('Pesan')) : ?>
-                            <div class="alert alert-success" role="alert">
-                                <?= session()->getFlashdata('Pesan'); ?>
-                            </div>
-                        <?php endif; ?>
-                        <table class="table table-hover" id="users-list">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Tahun Ajaran</th>
-                                    <th scope="col">Nomer Induk Siswa</th>
-                                    <th scope="col">Nama Lengkap</th>
-                                    <th scope="col">Kelas</th>
-                                    <th scope="col">Jurusan</th>
-                                    <th scope="col">Nama Wali Kelas</th>
-                                    <th scope="col">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($masterdata as $k) : ?>
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 20px;margin-top: 20px">
+                    <h1 class="h3 mb-0 text-gray-800">Masterdata Pelajaran</h1>
+                </div>
+                <hr>
+                <div class="container mb-5">
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col">
+                            <a class="btn btn-primary mb-4" href="/masterdata/tambah">Tambah Siswa</a>
+                            <?php if (session()->getFlashdata('Pesan')) : ?>
+                                <div class="alert alert-success" role="alert">
+                                    <?= session()->getFlashdata('Pesan'); ?>
+                                </div>
+                            <?php endif; ?>
+                            <table class="table table-hover" id="users-list">
+                                <thead>
                                     <tr>
-                                        <th scope="row"><?= $i++; ?></th>
-                                        <td><?= $k['tahun_ajaran']; ?></td>
-                                        <td><?= $k['nis']; ?></td>
-                                        <td><?= $k['nama_lengkap']; ?></td>
-                                        <td><?= $k['kelas']; ?></td>
-                                        <td><?= $k['jurusan']; ?></td>
-                                        <td><?= $k['nama_walikelas']; ?></td>
-                                        <td>
-                                            <a href="<?= base_url(); ?>/masterdata/edit/<?= $k['id']; ?>" style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit "></a>
-                                            <a href="<?= base_url(); ?>/masterdata/delete/<?= $k['id']; ?>" class="btn btn-danger btn-delete fa fa-trash"></a>
-                                        </td>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Tahun Ajaran</th>
+                                        <th scope="col">Nomer Induk Siswa</th>
+                                        <th scope="col">Nama Lengkap</th>
+                                        <th scope="col">Kelas</th>
+                                        <th scope="col">Jurusan</th>
+                                        <th scope="col">Nama Wali Kelas</th>
+                                        <th scope="col">Aksi</th>
                                     </tr>
-                                <?php endforeach ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($masterdata as $k) : ?>
+                                        <tr>
+                                            <th scope="row"><?= $i++; ?></th>
+                                            <td><?= $k['tahun_ajaran']; ?></td>
+                                            <td><?= $k['nis']; ?></td>
+                                            <td><?= $k['nama_lengkap']; ?></td>
+                                            <td><?= $k['kelas']; ?></td>
+                                            <td><?= $k['jurusan']; ?></td>
+                                            <td><?= $k['nama_walikelas']; ?></td>
+                                            <td>
+                                                <a href="<?= base_url(); ?>/masterdata/edit/<?= $k['id']; ?>" style="color:#ffffff" class="btn btn-primary  btn-edit fa fa-edit "></a>
+                                                <a href="<?= base_url(); ?>/masterdata/delete/<?= $k['id']; ?>" class="btn btn-danger btn-delete fa fa-trash"></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 

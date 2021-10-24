@@ -47,12 +47,50 @@ class Masterdata extends BaseController
             'guru' => $this->gurumodel->getguru(),
             'jurusan' => $this->jurusanmodel->getjurusan(),
             'nis' => $this->siswamodel->getsiswa(),
-            'kelas' => $this->kelasmodel->getkelas()
+            'kelas' => $this->kelasmodel->getkelas(),
+            'validation' => \Config\Services::validation()
         ];
         return view('/masterdata/add', $data);
     }
+
     public function savedata()
     {
+        //validasi
+        if (!$this->validate([
+            'tahun_ajaran' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tahun Ajaran Harus diisi.',
+                ]
+            ],
+            'nis' => [
+                'rules' => 'required|is_unique[siswa.nis]',
+                'errors' => [
+                    'required' => 'Nomor induk siswa harus di isi',
+                    'is_unique' => 'Nis sudah didaftarkan'
+                ]
+            ],
+            'kelas' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'kelas Harus diisi.',
+                ]
+            ],
+            'jurusan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jurusan Harus diisi.',
+                ]
+            ],
+            'wali_kelas' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Wali Kelas Harus diisi.',
+                ]
+            ],
+        ])) {
+            return redirect()->to('/masterdata/tambah')->withInput();
+        }
         $this->masterdata->save([
             'tahun_ajaran' => $this->request->getVar('tahun_ajaran'),
             'nis' => $this->request->getVar('nis'),
